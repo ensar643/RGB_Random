@@ -1,0 +1,22 @@
+int RRandom;
+int GRandom;
+int BRandom;
+void setup()
+{
+pinMode(3, OUTPUT); //Kırmızı LED portu
+pinMode(5, OUTPUT); //Yeşil LED portu
+pinMode(6, OUTPUT); //Mavi LED portu
+}
+void loop()
+{
+// Bu aşamada her adımda 0 ile 255 arasında rastgele sayı üretir.
+RRandom = random(0,255);
+GRandom = random(0,255);
+BRandom = random(0,255);
+// Seçilen rastgele renk değerleri
+ // ayrı ayrı analog olarak renk pinlerine
+analogWrite(3, RRandom); // RRandom değişkenini 3. porta gönderir.
+analogWrite(5, GRandom); // GRandom değişkenini 5. porta gönderir.
+analogWrite(6, BRandom); // BRandom değişkenini 6. porta gönderir.
+delay(1000);
+}
